@@ -3,7 +3,21 @@
 > **Versão 1.0 — MVP Oficial de Produção**  
 > Inspirado na estética premium e experiência mobile fintech (Pierre Finance).
 
-FINORA AI é uma aplicação financeira pessoal **Local-First**, segura, responsiva e instalável (PWA), equipada com um assistente conversacional de inteligência artificial contextual.
+FINORA AI é uma aplicação financeira pessoal **Local-First**, segura, responsiva e instalável nativamente em dispositivos Android (**APK**) ou como PWA, equipada com um assistente conversacional de inteligência artificial contextual.
+
+---
+
+## 📲 Download do Aplicativo Android (APK)
+
+Você pode baixar diretamente o arquivo APK compilado para o seu celular Android:
+
+👉 **[Clique aqui para baixar o APK no GitHub Releases](https://github.com/gabriell47ferreira-sys/finora.ia/releases)**
+
+### Como instalar no celular:
+1. No seu celular Android, abra o link acima e baixe o arquivo `finora-ai-v1.0.apk`.
+2. Toque na notificação de download concluído ou abra a pasta **Downloads**.
+3. Toque em **Instalar** (se for a primeira vez, autorize a instalação de fontes desconhecidas no navegador).
+4. O FINORA AI será instalado como um aplicativo nativo completo, com ícone próprio e funcionamento 100% offline!
 
 ---
 
