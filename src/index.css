@@ -1,0 +1,81 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-display: 'Plus Jakarta Sans', var(--font-sans);
+  --font-mono: 'JetBrains Mono', monospace;
+
+  --color-finora-bg: #080808;
+  --color-finora-surface: #151515;
+  --color-finora-elevated: #202020;
+  --color-finora-border: #292929;
+  --color-finora-text: #FFFFFF;
+  --color-finora-muted: #A1A1A1;
+  --color-finora-accent: #B7FF35;
+  --color-finora-success: #32D583;
+  --color-finora-danger: #FF6464;
+}
+
+:root {
+  color-scheme: dark;
+}
+
+body {
+  background-color: #080808;
+  color: #FFFFFF;
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -webkit-tap-highlight-color: transparent;
+  user-select: none;
+}
+
+input, textarea, [contenteditable="true"] {
+  user-select: text;
+}
+
+/* Custom subtle scrollbar */
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #292929;
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #3f3f3f;
+}
+
+/* Subtle fintech glowing effects */
+.glow-accent {
+  box-shadow: 0 0 30px -5px rgba(183, 255, 53, 0.25);
+}
+
+.glow-accent-subtle {
+  box-shadow: 0 0 20px -8px rgba(183, 255, 53, 0.15);
+}
+
+.glow-ambient-top {
+  background: radial-gradient(circle 380px at 50% -80px, rgba(183, 255, 53, 0.14), transparent 70%);
+}
+
+.glow-card {
+  position: relative;
+  overflow: hidden;
+}
+
+.glow-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.08), transparent);
+}

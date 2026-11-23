@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="none">
+  <rect width="512" height="512" rx="128" fill="#080808"/>
+  <circle cx="256" cy="256" r="230" stroke="#1F1F1F" stroke-width="4"/>
+  <circle cx="256" cy="180" r="140" fill="url(#limeGlow)" fill-opacity="0.12"/>
+  <path d="M160 140H352V192H224V236H320V288H224V372H160V140Z" fill="#B7FF35"/>
+  <circle cx="340" cy="340" r="32" fill="#B7FF35" fill-opacity="0.8"/>
+  <defs>
+    <radialGradient id="limeGlow" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(256 180) rotate(90) scale(140)">
+      <stop stop-color="#B7FF35"/>
+      <stop offset="1" stop-color="#B7FF35" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+</svg>
