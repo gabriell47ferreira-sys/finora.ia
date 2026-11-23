@@ -32,14 +32,22 @@ jobs:
       - name: Setup Gradle
         uses: gradle/actions/setup-gradle@v4
 
+      - name: Setup Android SDK Environment
+        run: |
+          echo "sdk.dir=$ANDROID_HOME" > android/local.properties
+          yes | $ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager --licenses || true
+
       - name: Install Node Dependencies
         run: npm ci || npm install
 
       - name: Build Web Application
         run: npm run build
 
-      - name: Sync Capacitor Android
-        run: npx cap sync android || npx cap copy android
+      - name: Copy Assets to Android App
+        run: |
+          mkdir -p android/app/src/main/assets/public
+          cp -r dist/* android/app/src/main/assets/public/
+          npx cap sync android --no-build || true
 
       - name: Grant Execute Permission to Gradle
         run: chmod +x android/gradlew
@@ -68,14 +76,19 @@ jobs:
           tag_name: v1.0.0-apk
           name: FINORA AI v1.0.0 — Android APK
           body: |
-            ## 📱 FINORA AI — Instalação Android
+            ## 📱 FINORA AI — Download do APK Oficial
             
-            Baixe o aplicativo oficial do **FINORA AI** para dispositivos Android:
+            Baixe e instale o aplicativo Android oficial do **FINORA AI**:
             
+            - ⚡ **Offline & Local-First**: Seus dados financeiros ficam seguros no seu aparelho.
+            - 🤖 **Assistente com Inteligência Artificial**: Análise e consultoria financeira avançada.
+            - 🎯 **Planejamento & Metas**: Controle de orçamento com base na regra 50/30/20.
+            
+            ### Como instalar:
             1. Baixe o arquivo **finora-ai-v1.0.apk** abaixo.
-            2. Toque no arquivo baixado no seu celular Android.
-            3. Caso solicitado, permita a instalação de fontes desconhecidas para o seu navegador ou gerenciador de arquivos.
-            4. Abra o FINORA AI e aproveite seu assistente financeiro offline e inteligente!
+            2. Abra o arquivo baixado nas notificações ou no gerenciador de arquivos do celular.
+            3. Se necessário, permita a instalação de apps de fontes desconhecidas no navegador.
+            4. Conclua a instalação e abra o app!
           files: release-apk/finora-ai-v1.0.apk
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
