@@ -61,10 +61,10 @@ jobs:
 
       - name: Validate Gradle Build Output
         run: |
-          echo "==== GRADLE OUTPUT (LAST 150 LINES) ===="
-          tail -n 150 gradle_output.txt
           if ! grep -q "BUILD SUCCESSFUL" gradle_output.txt; then
-            echo "::error::Gradle build failed. Please see the output above."
+            tail -n 35 gradle_output.txt | while IFS= read -r line; do
+              echo "::error::$line"
+            done
             exit 1
           fi
 
